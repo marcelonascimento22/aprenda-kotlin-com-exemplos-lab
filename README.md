@@ -1,10 +1,79 @@
-# Aprenda Kotlin Com Exemplos: Desafio de Projeto (Lab)
+# 📘 Sistema de Matrículas em Kotlin
 
-Desafio de Projeto criado para avaliação do conteúdo técnico explorado no repositório [aprenda-kotlin-com-exemplos](https://github.com/digitalinnovationone/aprenda-kotlin-com-exemplos). **Nesse contexto, iremos abstrair o seguinte domínio de aplicação:**
+Implementa um sistema simples de **gestão de formação educacional**, permitindo cadastrar usuários, matriculando em uma formação, consultar seus dados e gerar relatórios.  
+O código foi desenvolvido utilizando os princípios de **orientação a objetos**, **encapsulamento**, **interfaces**, **enumerações** e **separação de responsabilidades**.
 
-**A [DIO](https://web.dio.me) possui `Formacoes` incríveis que têm como objetivo oferecer um conjunto de `ConteudosEducacionais` voltados para uma stack tecnológica específica, preparando profissionais de TI para o mercado de trabalho. `Formacoes` possuem algumas características importantes, como `nome`, `nivel` e seus respectivos `conteudosEducacionais`. Além disso, tais experiências educacionais têm um comportamento relevante ao nosso domínio, definido pela capacidade de `matricular` um ou mais `Alunos`.**
+---
+
+## 🚀 Funcionalidades
+
+- Cadastro de usuários (alunos)
+- Cadastro de conteúdos educacionais
+- Criação de formações compostas por vários conteúdos
+- Matrícula de usuário
+- Prevenção de matrícula duplicada
+- Consulta individual do aluno
+- Geração de relatório da formação
+
+---
+
+## 🧩 Estrutura do Projeto
+
+### 🔹 **Enum: `Nivel`**
+Define os níveis de dificuldade:
+- **BASICO**
+- **INTERMEDIARIO**
+- **AVANCADO**
+
+### 🔹 **Classe `Usuario`**
+Representa os dados do aluno:
+- Nome  
+- Idade  
+- Telefone  
+- Endereço  
+
+### 🔹 **Data Class `ConteudoEducacional`**
+Define uma formação:
+- Nome  
+- Duração (padrão 60 min)  
+- Nível  
+
+### 🔹 **Interface `Matriculavel`**
+Define o contrato para objetos que permitem matrícula de usuários.
+
+### 🔹 **Classe `Formacao`**
+Contém:
+- Nome da formação  
+- Lista de conteúdos  
+- Lista interna de alunos inscritos  
+
+Implementa:
+- Método `matricular()`  
+- Métodos de listagem dos conteúdos e dos inscritos  
+
+### 🔹 **`MatriculaService`**
+Responsável por executar o processo de matrícula.
+
+### 🔹 **`RelatorioService`**
+Gera relatórios sobre:
+- Conteúdos da formação  
+- Alunos matriculados  
+
+### 🔹 **`ConsultarAluno`**
+Exibe os dados de um aluno específico.
+
+### 🔹 **Função `main()`**
+Simula a aplicação criando:
+- Usuários  
+- Conteúdos  
+- Formação  
+- Matrículas  
+- Relatório  
+- Consultas individuais  
+
+---
 
 
-```kotlin
-TODO("Crie uma solução em Koltin abstraindo esse domínio. O arquivo [desafio.kt] te ajudará 😉")
-```
+## 📄 Saída (Console)
+
+<img src="image/Captura de tela 2025-12-04 005137.png">
